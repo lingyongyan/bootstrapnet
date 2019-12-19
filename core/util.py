@@ -8,12 +8,12 @@
 @Python release: 3.7
 @Notes:
 """
-from itertools import product, combinations
-import torch
-import numpy as np
-from torch.distributions.multinomial import Multinomial
-import logging
 import os
+import logging
+from itertools import product, combinations
+
+import numpy as np
+import torch
 from torchtext.data import Field, Dataset, Example
 
 
@@ -30,9 +30,7 @@ def group_select_eff(probs, cate_valid, valid, top_n=100, training=False):
     for c, cate_mask in enumerate(cate_valid):
         new_probs[cate_mask, c] = probs[cate_mask, c]
     new_probs = new_probs / (new_probs.sum(dim=-1, keepdim=True) + 1e-16)
-    # entropy = torch.full((probs.size(0),), 1e10, dtype=torch.float, device=probs.device)
     index = torch.full((probs.size(0),), -1, dtype=torch.long, device=probs.device)
-    # entropy[valid] = torch.sum(- probs[valid] * probs[valid].log(), dim=-1)
     if training:
         index[valid] = torch.multinomial(new_probs[valid], 1).squeeze(-1)
     else:
