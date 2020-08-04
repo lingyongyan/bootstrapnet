@@ -29,7 +29,7 @@ opt['s_device'] = 2
 # no_boot default is '', True for alternative
 opt['no_boot'] = ''
 opt['disable_global'] = True
-opt['initialization'] = 'embeeding'
+opt['initialization'] = 'embedding'
 assert opt['initialization'] in ['embedding', 'random', 'uniform']
 
 if opt['layer'] != 3:
