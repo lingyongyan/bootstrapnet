@@ -7,7 +7,7 @@
  * @FilePath: /bootstrapnet/README.md
  -->
 ## End-to-End Bootstrapping Neural Network for Entity Set Expansion
-Source code for [AAAI2020](https://aaai.org/Conferences/AAAI-20/) paper:[End-to-End Bootstrapping Neural Network for Entity Set Expansion]()
+Source code for [AAAI2020](https://aaai.org/Conferences/AAAI-20/) paper:[End-to-End Bootstrapping Neural Network for Entity Set Expansion](https://aaai.org/ojs/index.php/AAAI/article/view/6482/6338)
 
 ### Requirements
 - pytorch >= 1.2.0
